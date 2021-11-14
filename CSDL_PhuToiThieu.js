@@ -145,9 +145,26 @@ function PhuToiThieu(input) {
         });
 }
 
+// AB®C;C®A;BC®D;ACD®B;D®EG;BE®C;CG®BD;CE®AG
+
+function handlerInput(value) {
+    const specialCharacters = '®';
+    var result = '';
+    for (var i = 0; i < value.length; i++)
+        if (value[i] === ' ')
+            continue;
+        else if ((value[i].toUpperCase() >= 'A' && value[i].toUpperCase() <= 'Z') || value[i] === ';')
+            result += value[i].toUpperCase();
+        else if (value[i] === ',')
+            result += ';';
+        else
+            result += specialCharacters;
+    return result;
+}
+
 var submitBtn = document.querySelector('button');
 submitBtn.onclick = () => {
     var inputElement = document.querySelector('input');
     if (inputElement.value)
-        PhuToiThieu(inputElement.value);
+        PhuToiThieu(handlerInput(inputElement.value));
 }
