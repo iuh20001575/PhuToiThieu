@@ -125,6 +125,7 @@ function PhuToiThieu(input) {
                     baoDong += res;
                     baoDong = Array.from(new Set(baoDong.split(''))).join('');
                 }
+                kq += `${a[i][0]}+ = ${baoDong}\n`;
                 console.log(`${a[i][0]}+ = ${baoDong}`);
                 if (include(baoDong, a[i][1])) {
                     kq += `Chứa ${a[i][1]} nên loại\n`;
