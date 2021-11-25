@@ -100,7 +100,7 @@ function PhuToiThieu(input) {
             var res = a.reduce((a, b) =>
                 a === '' ? a + `${b[0]}->${b[1]}` : a + `; ${b[0]}->${b[1]}`, '');
             console.log();
-            kq += `\nF; = {${res}}\n\n`;
+            kq += `\nF = {${res}}\n\n`;
             console.log(`F = {${res}}`);
             document.querySelector('.b2').innerText = kq;
             kq = '';
